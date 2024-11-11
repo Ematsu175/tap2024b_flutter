@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class ElementUefaEuropa extends StatelessWidget {
-  const ElementUefaEuropa({super.key});
+class ElementConmebolSud extends StatelessWidget {
+  const ElementConmebolSud({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('UEFA EUROPA LEAGUE'),
+        title: const Text('CONMEBOL SUDAMERICANA'),
         backgroundColor: Colors.black,
       ),
       body: SingleChildScrollView(
@@ -36,7 +36,7 @@ class ElementUefaEuropa extends StatelessWidget {
                     margin: const EdgeInsets.symmetric(
                         vertical: 10, horizontal: 40),
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 255, 136, 25)
+                      color: Color.fromARGB(255, 150, 150, 150)
                           .withOpacity(0.4),
                       borderRadius: const BorderRadius.all(Radius.circular(22)),
                     ),
@@ -50,7 +50,7 @@ class ElementUefaEuropa extends StatelessWidget {
                             width: 100,
                             height: 100,
                             child: Image.asset(
-                              'Sevilla_logo_PNG1.png',
+                              'Element_LigaQuito.png',
                               fit: BoxFit.fill,
                               width: double.infinity,
                               height: double.infinity,
@@ -79,7 +79,7 @@ class ElementUefaEuropa extends StatelessWidget {
                                 SizedBox(
                                   height: 50,
                                   child: new Text(
-                                      'Finales Jugadas \n 7',
+                                      'Finales Jugadas \n 3',
                                       textAlign: TextAlign.center,
                                       style: const TextStyle(
                                           fontSize: 15, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 255, 255, 255)),
@@ -101,7 +101,7 @@ class ElementUefaEuropa extends StatelessWidget {
                                 SizedBox(
                                   height: 50,
                                   child: Text(
-                                      'Finales Ganadas \n 7',
+                                      'Finales Ganadas \n 2',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontSize: 15, color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold),
@@ -129,7 +129,7 @@ class ElementUefaEuropa extends StatelessWidget {
                     margin: const EdgeInsets.symmetric(
                         vertical: 10, horizontal: 40),
                     decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 255, 136, 25)
+                      color: const Color.fromARGB(255, 150, 150, 150)
                           .withOpacity(0.4),
                       borderRadius: const BorderRadius.all(Radius.circular(22)),
                     ),
@@ -143,7 +143,7 @@ class ElementUefaEuropa extends StatelessWidget {
                             width: 100,
                             height: 100,
                             child: Image.asset(
-                              'Element_Liverpool.png',
+                              'Element_BJ.png',
                               fit: BoxFit.fill,
                               width: double.infinity,
                               height: double.infinity,
@@ -172,286 +172,7 @@ class ElementUefaEuropa extends StatelessWidget {
                                 SizedBox(
                                   height: 50,
                                   child: new Text(
-                                      'Finales Jugadas \n 4',
-                                      textAlign: TextAlign.center,
-                                      style: const TextStyle(
-                                          fontSize: 15, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 255, 255, 255)),
-                                    ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Container(
-                            margin: const EdgeInsets.only(right: 20),
-                            padding: const EdgeInsets.symmetric(vertical: 34),
-                            child: const Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                SizedBox(
-                                  height: 50,
-                                  child: Text(
-                                      'Finales Ganadas \n 3',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontSize: 15, color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold),
-                                    ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20,),
-              Transform.translate(
-                offset: const Offset(0, 0),
-                child: Transform(
-                  alignment: FractionalOffset.center,
-                  transform: Matrix4.identity()
-                    ..setEntry(3, 2, 0.01)
-                    ..rotateY(0),
-                  child: Container(
-                    height: 200,
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 40),
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 255, 136, 25)
-                          .withOpacity(0.4),
-                      borderRadius: const BorderRadius.all(Radius.circular(22)),
-                    ),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(
-                              22), // Mantiene el borde redondeado
-                          child: SizedBox(
-                            width: 100,
-                            height: 100,
-                            child: Image.asset(
-                              'Element_AtleticoMadrid.png',
-                              fit: BoxFit.fill,
-                              width: double.infinity,
-                              height: double.infinity,
-                            ),
-                          ),
-                        ),
-                        const Center(
-                          child: Text(
-                            '',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Container(
-                            margin: const EdgeInsets.only(right: 20),
-                            padding: const EdgeInsets.symmetric(vertical: 34),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height: 50,
-                                  child: new Text(
-                                      'Finales Jugadas \n 4',
-                                      textAlign: TextAlign.center,
-                                      style: const TextStyle(
-                                          fontSize: 15, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 255, 255, 255)),
-                                    ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Container(
-                            margin: const EdgeInsets.only(right: 20),
-                            padding: const EdgeInsets.symmetric(vertical: 34),
-                            child: const Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                SizedBox(
-                                  height: 50,
-                                  child: Text(
-                                      'Finales Ganadas \n 3',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontSize: 15, color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold),
-                                    ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20,),
-              Transform.translate(
-                offset: const Offset(0, 0),
-                child: Transform(
-                  alignment: FractionalOffset.center,
-                  transform: Matrix4.identity()
-                    ..setEntry(3, 2, 0.01)
-                    ..rotateY(0),
-                  child: Container(
-                    height: 200,
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 40),
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 255, 136, 25)
-                          .withOpacity(0.4),
-                      borderRadius: const BorderRadius.all(Radius.circular(22)),
-                    ),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(
-                              22), // Mantiene el borde redondeado
-                          child: SizedBox(
-                            width: 100,
-                            height: 100,
-                            child: Image.asset(
-                              'Element_Inter.png',
-                              fit: BoxFit.fill,
-                              width: double.infinity,
-                              height: double.infinity,
-                            ),
-                          ),
-                        ),
-                        const Center(
-                          child: Text(
-                            '',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Container(
-                            margin: const EdgeInsets.only(right: 20),
-                            padding: const EdgeInsets.symmetric(vertical: 34),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height: 50,
-                                  child: new Text(
-                                      'Finales Jugadas \n 5',
-                                      textAlign: TextAlign.center,
-                                      style: const TextStyle(
-                                          fontSize: 15, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 255, 255, 255)),
-                                    ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerRight,
-                          child: Container(
-                            margin: const EdgeInsets.only(right: 20),
-                            padding: const EdgeInsets.symmetric(vertical: 34),
-                            child: const Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                SizedBox(
-                                  height: 50,
-                                  child: Text(
-                                      'Finales Ganadas \n 3',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                          fontSize: 15, color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold),
-                                    ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(height: 20,),
-              Transform.translate(
-                offset: const Offset(0, 0),
-                child: Transform(
-                  alignment: FractionalOffset.center,
-                  transform: Matrix4.identity()
-                    ..setEntry(3, 2, 0.01)
-                    ..rotateY(0),
-                  child: Container(
-                    height: 200,
-                    margin: const EdgeInsets.symmetric(
-                        vertical: 10, horizontal: 40),
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 255, 136, 25)
-                          .withOpacity(0.4),
-                      borderRadius: const BorderRadius.all(Radius.circular(22)),
-                    ),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(
-                              22), // Mantiene el borde redondeado
-                          child: SizedBox(
-                            width: 100,
-                            height: 100,
-                            child: Image.asset(
-                              'Element_Parma.png',
-                              fit: BoxFit.fill,
-                              width: double.infinity,
-                              height: double.infinity,
-                            ),
-                          ),
-                        ),
-                        const Center(
-                          child: Text(
-                            '',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18,
-                            ),
-                          ),
-                        ),
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Container(
-                            margin: const EdgeInsets.only(right: 20),
-                            padding: const EdgeInsets.symmetric(vertical: 34),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height: 50,
-                                  child: new Text(
-                                      'Finales Jugadas \n 8',
+                                      'Finales Jugadas \n 2',
                                       textAlign: TextAlign.center,
                                       style: const TextStyle(
                                           fontSize: 15, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 255, 255, 255)),
@@ -474,6 +195,285 @@ class ElementUefaEuropa extends StatelessWidget {
                                   height: 50,
                                   child: Text(
                                       'Finales Ganadas \n 2',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 15, color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold),
+                                    ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20,),
+              Transform.translate(
+                offset: const Offset(0, 0),
+                child: Transform(
+                  alignment: FractionalOffset.center,
+                  transform: Matrix4.identity()
+                    ..setEntry(3, 2, 0.01)
+                    ..rotateY(0),
+                  child: Container(
+                    height: 200,
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 40),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 150, 150, 150)
+                          .withOpacity(0.4),
+                      borderRadius: const BorderRadius.all(Radius.circular(22)),
+                    ),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                              22), // Mantiene el borde redondeado
+                          child: SizedBox(
+                            width: 100,
+                            height: 100,
+                            child: Image.asset(
+                              'Element_Ind.png',
+                              fit: BoxFit.fill,
+                              width: double.infinity,
+                              height: double.infinity,
+                            ),
+                          ),
+                        ),
+                        const Center(
+                          child: Text(
+                            '',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 20),
+                            padding: const EdgeInsets.symmetric(vertical: 34),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  height: 50,
+                                  child: new Text(
+                                      'Finales Jugadas \n 2',
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(
+                                          fontSize: 15, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 255, 255, 255)),
+                                    ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 20),
+                            padding: const EdgeInsets.symmetric(vertical: 34),
+                            child: const Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                SizedBox(
+                                  height: 50,
+                                  child: Text(
+                                      'Finales Ganadas \n 2',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 15, color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold),
+                                    ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20,),
+              Transform.translate(
+                offset: const Offset(0, 0),
+                child: Transform(
+                  alignment: FractionalOffset.center,
+                  transform: Matrix4.identity()
+                    ..setEntry(3, 2, 0.01)
+                    ..rotateY(0),
+                  child: Container(
+                    height: 200,
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 40),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 150, 150, 150)
+                          .withOpacity(0.4),
+                      borderRadius: const BorderRadius.all(Radius.circular(22)),
+                    ),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                              22), // Mantiene el borde redondeado
+                          child: SizedBox(
+                            width: 100,
+                            height: 100,
+                            child: Image.asset(
+                              'Element_Paranaense.png',
+                              fit: BoxFit.fill,
+                              width: double.infinity,
+                              height: double.infinity,
+                            ),
+                          ),
+                        ),
+                        const Center(
+                          child: Text(
+                            '',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 20),
+                            padding: const EdgeInsets.symmetric(vertical: 34),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  height: 50,
+                                  child: new Text(
+                                      'Finales Jugadas \n 2',
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(
+                                          fontSize: 15, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 255, 255, 255)),
+                                    ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 20),
+                            padding: const EdgeInsets.symmetric(vertical: 34),
+                            child: const Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                SizedBox(
+                                  height: 50,
+                                  child: Text(
+                                      'Finales Ganadas \n 2',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontSize: 15, color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold),
+                                    ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(height: 20,),
+              Transform.translate(
+                offset: const Offset(0, 0),
+                child: Transform(
+                  alignment: FractionalOffset.center,
+                  transform: Matrix4.identity()
+                    ..setEntry(3, 2, 0.01)
+                    ..rotateY(0),
+                  child: Container(
+                    height: 200,
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 40),
+                    decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 150, 150, 150)
+                          .withOpacity(0.4),
+                      borderRadius: const BorderRadius.all(Radius.circular(22)),
+                    ),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(
+                              22), // Mantiene el borde redondeado
+                          child: SizedBox(
+                            width: 100,
+                            height: 100,
+                            child: Image.asset(
+                              'Element_River.png',
+                              fit: BoxFit.fill,
+                              width: double.infinity,
+                              height: double.infinity,
+                            ),
+                          ),
+                        ),
+                        const Center(
+                          child: Text(
+                            '',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerLeft,
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 20),
+                            padding: const EdgeInsets.symmetric(vertical: 34),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  height: 50,
+                                  child: new Text(
+                                      'Finales Jugadas \n 2',
+                                      textAlign: TextAlign.center,
+                                      style: const TextStyle(
+                                          fontSize: 15, fontWeight: FontWeight.bold, color: Color.fromARGB(255, 255, 255, 255)),
+                                    ),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                        Align(
+                          alignment: Alignment.centerRight,
+                          child: Container(
+                            margin: const EdgeInsets.only(right: 20),
+                            padding: const EdgeInsets.symmetric(vertical: 34),
+                            child: const Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                SizedBox(
+                                  height: 50,
+                                  child: Text(
+                                      'Finales Ganadas \n 1',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                           fontSize: 15, color: Color.fromARGB(255, 255, 255, 255), fontWeight: FontWeight.bold),
