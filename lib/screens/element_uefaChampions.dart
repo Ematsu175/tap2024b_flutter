@@ -45,7 +45,7 @@ class ElementUefaChampions extends StatelessWidget {
                       children: [
                         ClipRRect(
                           borderRadius: BorderRadius.circular(
-                              22), // Mantiene el borde redondeado
+                              22), 
                           child: SizedBox(
                             width: 100,
                             height: 100,
