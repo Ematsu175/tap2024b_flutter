@@ -20,6 +20,8 @@ class MyApp extends StatelessWidget {
           routes: {
             "/dash":(context) => DashboardScreen(),
             "/challenge":(context) => ChallengeScreen(),
+            "/movies":(context) => PopularScreen(),
+
           },
             home: const PopularScreen()
         );
