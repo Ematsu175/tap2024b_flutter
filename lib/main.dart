@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tap2024b/screens/challenge_screen.dart';
 import 'package:tap2024b/screens/dashboard_screen.dart';
+import 'package:tap2024b/screens/detail_popular.dart';
 import 'package:tap2024b/screens/popular_screen.dart';
 import 'package:tap2024b/settings/global_values.dart';
 
@@ -21,9 +22,10 @@ class MyApp extends StatelessWidget {
             "/dash":(context) => DashboardScreen(),
             "/challenge":(context) => ChallengeScreen(),
             "/movies":(context) => PopularScreen(),
+            "/detail":(context) => DetailPopular(),
 
           },
-            home: const PopularScreen()
+            home: const DashboardScreen()
         );
       },
     );
