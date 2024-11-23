@@ -51,6 +51,8 @@ dev_dependencies:
   day_night_switcher: ^0.2.0+1
   easy_splash_screen: ^1.0.4
   dio: ^5.7.0
+  video_player: ^2.9.2
+  youtube_player_flutter: ^8.1.0
 
 
 # For information on the generic Dart part of this file, see the
