@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:tap2024b/models/popular_model.dart';
-import 'package:youtube_player_flutter/youtube_player_flutter.dart';
+
 
 class DetailPopular extends StatefulWidget {
   const DetailPopular({super.key});
@@ -10,32 +11,16 @@ class DetailPopular extends StatefulWidget {
 }
 
 class _DetailPopularState extends State<DetailPopular> {
-  late YoutubePlayerController _youtubeController;
-
-  @override
-  void initState() {
-    super.initState();
-
-    // Supongamos que tienes la clave del tráiler de YouTube
-    const String videoKey = ""; // Reemplaza con la clave real del tráiler
-    _youtubeController = YoutubePlayerController(
-      initialVideoId: videoKey,
-      flags: const YoutubePlayerFlags(
-        autoPlay: false,
-        mute: false,
-      ),
-    );
-  }
-
-  @override
-  void dispose() {
-    _youtubeController.dispose();
-    super.dispose();
-  }
+  String? trailerUrl; // URL del tráiler
+  
 
   @override
   Widget build(BuildContext context) {
+    // Obtén el modelo PopularModel pasado como argumento
     final popular = ModalRoute.of(context)!.settings.arguments as PopularModel;
+
+    // Calcula la calificación para el RatingBar
+    double rating = (popular.voteAverage / 2).clamp(0, 5); 
 
     return Scaffold(
       appBar: AppBar(
@@ -43,7 +28,6 @@ class _DetailPopularState extends State<DetailPopular> {
       ),
       body: Stack(
         children: [
-          // Fondo oscuro con la imagen
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -55,13 +39,12 @@ class _DetailPopularState extends State<DetailPopular> {
               ),
             ),
           ),
-          // Poster de la película
           Positioned(
-            top: 50,
+            top: 80,
             left: 20,
             child: Container(
-              width: 200,
-              height: 300,
+              width: 125,
+              height: 225,
               decoration: BoxDecoration(
                 image: DecorationImage(
                   fit: BoxFit.cover,
@@ -71,73 +54,52 @@ class _DetailPopularState extends State<DetailPopular> {
               ),
             ),
           ),
-          // Título de la película
           Positioned(
             top: 80,
-            right: 50,
-            child: Container(
-              width: 200,
-              child: Text(
-                popular.title,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
+            right: 20,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 200,
+                  child: Text(
+                    popular.title,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
                 ),
-              ),
-            ),
-          ),
-          // Descripción de la película
-          Positioned(
-            top: 130,
-            right: 50,
-            child: Container(
-              width: 200,
-              child: Text(
-                popular.overview,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.normal,
-                  fontSize: 15,
-                ),
-              ),
-            ),
-          ),
-          // Votos promedio
-          Positioned(
-            top: 160,
-            right: 50,
-            child: Container(
-              width: 200,
-              child: Row(
-                children: [
-                  Image.asset('vote_average.png'),
-                  Text(
-                    popular.voteAverage.toString(),
+                Container(
+                  width: 200,
+                  child: Text(
+                    popular.overview,
                     style: const TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.normal,
-                      fontSize: 12,
+                      fontSize: 15,
                     ),
                   ),
-                ],
-              ),
+                ),
+                // RatingBar de solo lectura
+                RatingBarIndicator(
+                  rating: rating,
+                  itemBuilder: (context, _) => const Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                  ),
+                  itemCount: 5,
+                  itemSize: 30.0,
+                ),
+                Text(
+                  'Calificación: ${popular.voteAverage} / 10',
+                  style: const TextStyle(color: Colors.white, fontSize: 16),
+                ),
+              ],
             ),
           ),
-          // Reproductor de YouTube
-          Positioned(
-            bottom: 30,
-            left: 20,
-            right: 20,
-            child: Container(
-              height: 200,
-              child: YoutubePlayer(
-                controller: _youtubeController,
-                showVideoProgressIndicator: true,
-                progressIndicatorColor: Colors.red,
-              ),
-            ),
-          ),
+         
         ],
       ),
     );
