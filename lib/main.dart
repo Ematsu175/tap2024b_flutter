@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       valueListenable: GlobalValues.banThemeDark,
       builder: (BuildContext context, value, _) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           theme: ThemeData.dark(),
           title: 'Material App',
           routes: {
