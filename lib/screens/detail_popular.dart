@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:tap2024b/network/api_popular.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
@@ -16,21 +17,19 @@ class _DetailPopularState extends State<DetailPopular> {
   String? trailerUrl;
   String? videoKey; // Clave del video de YouTube
   bool isVideoAvailable = false; // Indica si hay un video disponible
-  List<Map<String, dynamic>> actors = []; // Lista de actores
+  List<Map<String, dynamic>> actors = [];
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
 
-    // Obtén el modelo PopularModel pasado como argumento
     final popular = ModalRoute.of(context)!.settings.arguments as PopularModel;
 
-    // Llama a la API para obtener el tráiler
     ApiPopular().getTrailer(popular.id).then((url) {
       if (url != null) {
         setState(() {
           trailerUrl = url;
-          videoKey = YoutubePlayer.convertUrlToId(trailerUrl!); // Extrae el ID del video
+          videoKey = YoutubePlayer.convertUrlToId(trailerUrl!);
           if (videoKey != null) {
             isVideoAvailable = true;
             _youtubeController = YoutubePlayerController(
@@ -45,7 +44,6 @@ class _DetailPopularState extends State<DetailPopular> {
       }
     });
 
-    // Llama a la API para obtener los actores
     ApiPopular().getActors(popular.id).then((actorList) {
       setState(() {
         actors = actorList;
@@ -63,7 +61,7 @@ class _DetailPopularState extends State<DetailPopular> {
   Widget build(BuildContext context) {
     final popular = ModalRoute.of(context)!.settings.arguments as PopularModel;
 
-    double rating = (popular.voteAverage / 2).clamp(0, 5); // Normaliza de 0 a 5
+    double rating = (popular.voteAverage / 2).clamp(0, 5); 
 
     return Scaffold(
       appBar: AppBar(
@@ -71,7 +69,6 @@ class _DetailPopularState extends State<DetailPopular> {
       ),
       body: Stack(
         children: [
-          // Fondo estático
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
@@ -83,27 +80,27 @@ class _DetailPopularState extends State<DetailPopular> {
               ),
             ),
           ),
-          // Contenido desplazable
           SingleChildScrollView(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Imagen de la película
-                  Container(
-                    width: 125,
-                    height: 225,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: NetworkImage(
-                            'https://image.tmdb.org/t/p/w500/${popular.posterPath}'),
+                  Hero(
+                    tag: popular.id,
+                    child: Container(
+                      width: 125,
+                      height: 225,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: NetworkImage(
+                              'https://image.tmdb.org/t/p/w500/${popular.posterPath}'),
+                        ),
                       ),
                     ),
                   ),
                   const SizedBox(height: 20),
-                  // Detalles de la película
                   Text(
                     popular.title,
                     style: const TextStyle(
@@ -122,7 +119,6 @@ class _DetailPopularState extends State<DetailPopular> {
                     ),
                   ),
                   const SizedBox(height: 10),
-                  // Calificación
                   RatingBarIndicator(
                     rating: rating,
                     itemBuilder: (context, _) => const Icon(
@@ -137,7 +133,6 @@ class _DetailPopularState extends State<DetailPopular> {
                     style: const TextStyle(color: Colors.white, fontSize: 16),
                   ),
                   const SizedBox(height: 20),
-                  // Tráiler de la película
                   if (isVideoAvailable)
                     YoutubePlayer(
                       controller: _youtubeController!,
@@ -153,7 +148,6 @@ class _DetailPopularState extends State<DetailPopular> {
                       ),
                     ),
                   const SizedBox(height: 20),
-                  // Lista de Actores
                   const Text(
                     "Reparto:",
                     style: TextStyle(
@@ -165,7 +159,7 @@ class _DetailPopularState extends State<DetailPopular> {
                   const SizedBox(height: 10),
                   actors.isNotEmpty
                       ? SizedBox(
-                          height: 150, // Altura del carrusel de actores
+                          height: 150, 
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal, // Scroll lateral
                             itemCount: actors.length,
@@ -179,10 +173,12 @@ class _DetailPopularState extends State<DetailPopular> {
                                     // Imagen del actor
                                     CircleAvatar(
                                       radius: 50,
-                                      backgroundImage: actor['profilePath'] != null
+                                      backgroundImage: actor['profilePath'] !=
+                                              null
                                           ? NetworkImage(
                                               'https://image.tmdb.org/t/p/w500/${actor['profilePath']}')
-                                          : const AssetImage('assets/default_actor.png')
+                                          : const AssetImage(
+                                                  'assets/default_actor.png')
                                               as ImageProvider,
                                     ),
                                     const SizedBox(height: 5),

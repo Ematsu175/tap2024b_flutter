@@ -52,13 +52,16 @@ class _PopularScreenState extends State<PopularScreen> {
   Widget PupularItem(PopularModel popular){
     return InkWell(
       onTap: ()=>Navigator.pushNamed(context, "/detail", arguments: popular),
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: NetworkImage('https://image.tmdb.org/t/p/w500/${popular.posterPath}')
-          )
+      child: Hero(
+        tag: popular.id,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: NetworkImage('https://image.tmdb.org/t/p/w500/${popular.posterPath}')
+            )
+          ),
         ),
       )
     );
